@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="main__container__demo">
+    <div class="main__container__demo__img">
+        <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645714737/jean/small_apple_iphone_12_6bc4b205a7_ro9rnq.png"></img>
+    </div>
+
+    {% for message in app.flashes('exito') %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    {{ form_start(formDemo) }}
+    <h3>Solicita tu demo</h3>
+        {{ form_widget(formDemo) }}
+        <button type="submit">Enviar</button>
+    {{ form_end(formDemo) }}
+</div>
+
+<div class="main__container__opinion">
+
+<h2>Opiniones de otros guardianes</h2>
+<div class="main__container__opinion__opinions">
+
+{% for opinion in opinions %}
+    <div class="main__container__opinion__opinions__item">
+    <p class="main__container__opinion__opinions__item--pborder">{{opinion.comment}}</p>
+    <p>{{opinion.author}}</p>
+    <p>{{opinion.city}}</p>
+    </div>
+{% endfor %}
+</div>
+
+</div>
+
+{% endblock %}
+    
+
+

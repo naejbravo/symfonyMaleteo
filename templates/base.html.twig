@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {# {{ encore_entry_link_tags('app') }} #}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="logo__container">
+                <div class="logo__container__caption">
+                    <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645714360/jean/652565_jcx5vu.png" alt="logo"></img>
+                    <h1>MALETEO</h1>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="hero__container">
+                <div class="hero__container__caption">
+                    <h1>Gana dinero guardando equipaje a viajeros como tu</h1>
+                    <div class="hero__container__caption--buttons">
+                    <a href="#">
+                        <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645891713/jean/Cons_C3_ADguelo-en-el-App-Store-300x116_c3nspe.png"></img>
+                    </a>
+                    <a href="#">
+                        <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645891803/jean/es-419_badge_web_generic_x6jgef.png"></img>
+                    </a>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </header>
+        <div class="main__container">
+            <h1>¿Cómo funciona?</h1>
+            <div class="main__container__function">
+                    <div class="main__container__function--item">
+                    <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645714495/jean/3601002_mnujb2.png"></img>
+                    <h3>Date de alta</h3>
+                    <p>Una olla de algo mas vaca que carnero, salpicon las mas noches, duelos y quebrantos los sabados</p>
+                    </div>
+                    <div class="main__container__function--item">
+                    <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645714495/jean/3601002_mnujb2.png"></img>
+                    <h3>Date de alta</h3>
+                    <p>Una olla de algo mas vaca que carnero, salpicon las mas noches, duelos y quebrantos los sabados</p>
+                    </div>
+                    <div class="main__container__function--item">
+                    <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645714495/jean/3601002_mnujb2.png"></img>
+                    <h3>Date de alta</h3>
+                    <p>Una olla de algo mas vaca que carnero, salpicon las mas noches, duelos y quebrantos los sabados</p>
+                    </div>
+            </div>
+        
+            {% block body %}
+        
+            {% endblock %}
+        </div>
+        <footer>
+            <h2>MALETEO</h2>
+            <span>hecho con &lt;3</span>
+        </footer>
+    </body>
+</html>

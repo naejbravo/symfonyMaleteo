@@ -1,0 +1,16 @@
+{% extends 'maleteo/index.html.twig' %}
+{% block stylesheets %}
+            {{ encore_entry_link_tags('list') }}
+{% endblock %}
+{% block body %}
+<div class="opinion">
+{% for opinion in opinions %}
+    <div class="opinion__item">
+    <p>{{opinion.comment}}</p>
+    <p>{{opinion.author}}</p>
+    <p>{{opinion.city}}</p>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
