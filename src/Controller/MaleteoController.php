@@ -36,9 +36,7 @@ class MaleteoController extends AbstractController
     }
 
     #[Route('/createOpinion', name: 'createOpinion')]
-
-
-    public function createProduct(EntityManagerInterface $doctrine):void
+    public function createProduct(EntityManagerInterface $doctrine)
     {
         $opinion = new Opinion();
         $opinion->setComment('Tras el enorme éxito internacional de su primera colaboración, "Bailar", que ganó un galardón en los Premios.');
@@ -50,7 +48,7 @@ class MaleteoController extends AbstractController
 
         // actually executes the queries (i.e. the INSERT query)
         $doctrine->flush();
-
+        return $this->redirectToRoute('home');
         // return $this->render("base.html.twig");
     }
 }
