@@ -1,26 +1,33 @@
 {
   "devDependencies": {
-      "@babel/preset-react": "^7.0.0",
-      "@hotwired/stimulus": "^3.0.0",
-      "@symfony/stimulus-bridge": "^3.0.0",
-      "@symfony/webpack-encore": "^1.7.0",
-      "core-js": "^3.0.0",
-      "regenerator-runtime": "^0.13.2",
-      "sass": "^1.49.8",
-      "sass-loader": "^12.0.0",
-      "webpack-notifier": "^1.6.0"
+    "@babel/preset-react": "^7.0.0",
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/stimulus-bridge": "^3.0.0",
+    "@symfony/webpack-encore": "^1.7.0",
+    "core-js": "^3.0.0",
+    "regenerator-runtime": "^0.13.2",
+    "sass": "^1.49.8",
+    "sass-loader": "^12.0.0",
+    "webpack-notifier": "^1.6.0"
   },
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-      "dev-server": "encore dev-server",
-      "dev": "encore dev",
-      "watch": "encore dev --watch",
-      "build": "encore production --progress"
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watchh": "encore dev --watch",
+    "buildd": "encore production --progress",
+    "build": "webpack -p --config ./resources/webpack/webpack.config.js --display-error-details",
+    "watch": "webpack -d --watch --config ./resources/webpack/webpack.config.js --display-error-details",
+    "heroku-postbuild": "webpack -p --config ./resources/webpack/webpack.config.js"
+  },
+  "engines": {
+      "node":"v16.13.*",
+      "npm":"8.1.*"
   },
   "dependencies": {
-      "prop-types": "^15.8.1",
-      "react": "^17.0.2",
-      "react-dom": "^17.0.2"
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
