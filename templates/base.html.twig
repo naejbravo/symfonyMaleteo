@@ -18,20 +18,30 @@
         <header>
             <div class="logo__container">
                 <div class="logo__container__caption">
+                
                 <a href="/">
                     <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645714360/jean/652565_jcx5vu.png" alt="logo"></img>
                     <h1>MALETEO</h1>
                     </a>
+                    
                 </div>
                 <div class="logo__container__nav">
+                {% if is_granted('ROLE_ADMIN') %}
                     <a href="/solicitudes">SOLICITUDES</a>
                     <a href="/opiniones">OPINIONES</a>
+                    <a href="/logout">SALIR</a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') == false %}
+                    <a href="/login">ENTRAR</a>
+                    <a href="/register">REGISTRARSE</a>
+                {% endif %}
                 </div>
             </div>
             <div class="hero__container">
                 <div class="hero__container__caption">
                     <h1>Gana dinero guardando equipaje a viajeros como tu</h1>
                     <div class="hero__container__caption--buttons">
+                    
                     <a href="#">
                         <img src="https://res.cloudinary.com/dkv0drgbb/image/upload/v1645891713/jean/Cons_C3_ADguelo-en-el-App-Store-300x116_c3nspe.png"></img>
                     </a>

@@ -12,6 +12,8 @@ import './styles/maleteo.scss'
 import './styles/opinion.scss'
 import './styles/demo.scss'
 import './styles/opinionForm.scss'
+import './styles/login.scss'
+import './styles/register.scss'
 
 // start the Stimulus application
 import './bootstrap';
