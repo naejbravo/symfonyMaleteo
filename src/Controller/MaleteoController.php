@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Demo;
 use App\Entity\Opinion;
 use App\Form\DemoFormType;
+use App\Form\OpinionFormType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Entity;
@@ -61,4 +62,22 @@ class MaleteoController extends AbstractController
         return $this->redirectToRoute('home');
         // return $this->render("base.html.twig");
     }
+
+    #[Route('/opiniones', name: 'opiniones')]
+    public function createOpinion(EntityManagerInterface $doctrine, Request $request )
+    {
+        $form = $this->createForm(OpinionFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $opinion = $form->getData();
+            $doctrine->persist($opinion);
+            $doctrine->flush();
+            $this->addFlash('exito', 'Opinion insertada correctamente');
+            return $this->redirect($this->generateUrl('opiniones')."#demo_form");
+        }
+        return $this->renderForm('maleteo/opinion.html.twig', 
+        ["formOpinion"=>$form]);
+    }
+
 }

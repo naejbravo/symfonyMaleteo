@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="main__container__opinionForm">
+    {{ form_start(formOpinion) }}
+    <h3>Dejanos tu opinion</h3>
+        {{ form_widget(formOpinion) }}
+        <button type="submit">Enviar</button>
+        {% for message in app.flashes('exito') %}
+        <span>{{ message }}</span>
+    {% endfor %}
+    {{ form_end(formOpinion) }}   
+</div>
+
+{% endblock %}
