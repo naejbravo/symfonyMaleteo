@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="main__container__demos">
+    
+        {% for demo in demos %}
+        <ul class="main__container__demos__ul">
+        <li>Nombre: {{demo.name}}</li>
+        <li>Email: {{demo.email}}</li>
+        <li>Ciudad: {{demo.city}}</li>
+        </ul>
+        {% endfor %}
+        
+    
+</div>
+
+{%endblock%}

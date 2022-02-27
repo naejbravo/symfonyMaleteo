@@ -10,6 +10,7 @@
 import './styles/app.scss'
 import './styles/maleteo.scss'
 import './styles/opinion.scss'
+import './styles/demo.scss'
 
 // start the Stimulus application
 import './bootstrap';

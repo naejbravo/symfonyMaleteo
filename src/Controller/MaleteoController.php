@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Demo;
 use App\Entity\Opinion;
 use App\Form\DemoFormType;
 use Doctrine\ORM\EntityManager;
@@ -29,10 +30,19 @@ class MaleteoController extends AbstractController
             $doctrine->persist($demo);
             $doctrine->flush();
             $this->addFlash('exito', 'Demo insertada correctamente');
-            return $this->redirectToRoute('home');
+            return $this->redirect($this->generateUrl('home')."#demo_form");
         }
         return $this->renderForm('maleteo/index.html.twig', 
         ["opinions"=>$opinions, "formDemo"=>$form]);
+    }
+
+    #[Route('/solicitudes', name: 'solicitudes')]
+    public function showRequestDemo(EntityManagerInterface $doctrine)
+    {
+        $repository = $doctrine->getRepository(Demo::class);
+        $demo=$repository->findBy(array(),array());
+        return $this->render('maleteo/demo.html.twig', 
+        ["demos"=>$demo]);
     }
 
     #[Route('/createOpinion', name: 'createOpinion')]

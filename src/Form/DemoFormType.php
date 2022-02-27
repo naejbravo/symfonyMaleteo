@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Demo;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,12 +15,26 @@ class DemoFormType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'row_attr'=>[
-                    'class'=>''
+                "label"=>"Nombre",
+                "attr"=> [
+                    "placeholder"=>"Vicent Chase"
+                ]
+                
+            ])
+            ->add('email', TextType::class, [
+                "label"=>"Email",
+                "attr"=> [
+                    "placeholder"=>"vicent@example.com"
                 ]
             ])
-            ->add('email')
-            ->add('city')
+            ->add('city', ChoiceType::class, [
+                "choices"=>[
+                    "Madrid"=>"Madrid",
+                    "Malaga"=>"Malaga",
+                    "Barcelona"=>"Barcelona"
+                ],
+                "label"=>"Ciudad",
+            ])
         ;
     }
 

@@ -2,6 +2,8 @@
 
 body {
     background-color: whitesmoke;
+    position: relative;
+    min-height: 100vh;    
 }
 
 *{
@@ -9,6 +11,8 @@ body {
     padding: 0;
     color: #41444B;
     font-family: 'Noto Sans', sans-serif;
+    list-style: none;
+    text-decoration:none;
 }
 
 header{
@@ -71,12 +75,12 @@ header{
 }
 
 .main__container{
+    padding-bottom: 3.5rem;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
     h1{
         font-size: 2rem;
         margin-bottom: 30px;
@@ -115,7 +119,7 @@ header{
             border:1px solid rgb(82, 87, 93, 0.4);
             border-radius: 2%;
             padding: 20px;
-            width: 200px;
+            width: 300px;
             h3{
                 margin-bottom: 10px;
             }
@@ -135,6 +139,14 @@ header{
                         border:1px solid rgb(82, 87, 93, 0.8);
                         background-color: whitesmoke;
                         font-size: 1.2rem;
+                        padding: 5px;
+                    }
+                    select{
+                        border-radius: 2px;
+                        border:1px solid rgb(82, 87, 93, 0.8);
+                        background-color: whitesmoke;
+                        font-size: 1.2rem;
+                        padding: 5px;
                     }
                 }
             }
@@ -152,12 +164,17 @@ header{
 }
 
 footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #41444B;
     padding: 10px 0;
+    margin-top: 30px;
+     height: 3rem;
     h2{
         color: whitesmoke;
         margin: 5px;
