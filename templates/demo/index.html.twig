@@ -3,16 +3,16 @@
 {% block title %}Demo index{% endblock %}
 
 {% block body %}
-    <h1>Demo index</h1>
+    <h1>CRUD demo</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nombre</th>
                 <th>Email</th>
-                <th>City</th>
-                <th>actions</th>
+                <th>Ciudad</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ demo.email }}</td>
                 <td>{{ demo.city }}</td>
                 <td>
-                    <a href="{{ path('demo_show', {'id': demo.id}) }}">show</a>
-                    <a href="{{ path('demo_edit', {'id': demo.id}) }}">edit</a>
+                    <a href="{{ path('demo_show', {'id': demo.id}) }}">ver</a>
+                    <a href="{{ path('demo_edit', {'id': demo.id}) }}">editar</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">No se han encontrado solicitudes de demo!</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('demo_new') }}">Create new</a>
+    <a href="{{ path('demo_new') }}" class="new">Crear nueva solicitud</a>
 {% endblock %}

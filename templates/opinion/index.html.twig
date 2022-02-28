@@ -3,16 +3,16 @@
 {% block title %}Opinion index{% endblock %}
 
 {% block body %}
-    <h1>Opinion index</h1>
+    <h1>CRUD Opinion</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Comment</th>
-                <th>Author</th>
-                <th>City</th>
-                <th>actions</th>
+                <th>Comentario</th>
+                <th>Autor</th>
+                <th>Ciudad</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ opinion.author }}</td>
                 <td>{{ opinion.city }}</td>
                 <td>
-                    <a href="{{ path('opinion_show', {'id': opinion.id}) }}">show</a>
-                    <a href="{{ path('opinion_edit', {'id': opinion.id}) }}">edit</a>
+                    <a href="{{ path('opinion_show', {'id': opinion.id}) }}">Ver</a>
+                    <a href="{{ path('opinion_edit', {'id': opinion.id}) }}">editar</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">No se han encontrado comentarios!</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('opinion_new') }}">Create new</a>
+    <a href="{{ path('opinion_new') }}" class="new">Crear nuevo comentario</a>
 {% endblock %}

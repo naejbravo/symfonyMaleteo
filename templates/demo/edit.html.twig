@@ -3,11 +3,11 @@
 {% block title %}Edit Demo{% endblock %}
 
 {% block body %}
-    <h1>Edit Demo</h1>
+    <h1>Editar Demo</h1>
 
-    {{ include('demo/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('demo/_form.html.twig', {'button_label': 'Actualizar'}) }}
 
-    <a href="{{ path('demo_index') }}">back to list</a>
+    <a href="{{ path('demo_index') }}">Volver a la lista</a>
 
     {{ include('demo/_delete_form.html.twig') }}
 {% endblock %}

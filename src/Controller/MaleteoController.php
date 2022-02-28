@@ -18,7 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 /**
  * Require ROLE_ADMIN for all the actions of this controller
  */
-#[IsGranted('ROLE_ADMIN')]
+#[IsGranted('ROLE_USER')]
 class MaleteoController extends AbstractController
 {
     #[Route('/', name: 'home')]

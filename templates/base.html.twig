@@ -26,12 +26,19 @@
                     
                 </div>
                 <div class="logo__container__nav">
-                {% if is_granted('ROLE_ADMIN') %}
+                {% if is_granted('ROLE_USER') %}
                     <a href="/solicitudes">SOLICITUDES</a>
                     <a href="/opiniones">OPINIONES</a>
+                    {% if is_granted('ROLE_ADMIN') == false %}
+                    <a href="/logout">SALIR</a>
+                    {% endif %}
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="/demo">EDITAR DEMOS</a>
+                    <a href="/opinion">EDITAR OPINIONES</a>
                     <a href="/logout">SALIR</a>
                 {% endif %}
-                {% if is_granted('ROLE_ADMIN') == false %}
+                {% if is_granted('ROLE_USER') == false %}
                     <a href="/login">ENTRAR</a>
                     <a href="/register">REGISTRARSE</a>
                 {% endif %}

@@ -14,6 +14,7 @@ import './styles/demo.scss'
 import './styles/opinionForm.scss'
 import './styles/login.scss'
 import './styles/register.scss'
+import './styles/crud.scss'
 
 // start the Stimulus application
 import './bootstrap';
